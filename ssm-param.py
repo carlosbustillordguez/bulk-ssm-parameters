@@ -20,7 +20,7 @@ def init_aws_clients(options):
     """ Initialize the AWS clients.
 
         Args:
-            args: the script options.
+            options: the script arguments.
     """
     # AWS Profile to perform the operations
     aws_profile = options.profile
@@ -65,7 +65,7 @@ def create_ssm_parameter(options):
     """ Create the SSM Parameter Store.
 
         Args:
-            args: the script options.
+            options: the script arguments.
     """
     vars_file = options.file
     ssm_param_type = options.type
@@ -162,7 +162,7 @@ def get_ssm_parameter(options):
     """ Get the SSM parameters in a specific hierarchy.
 
         Args:
-            args: the script options.
+            options: the script arguments.
     """
 
     # Remove trailing slash for the path if exists
@@ -214,7 +214,7 @@ def delete_ssm_parameter(options):
     """ Delete the SSM parameters in a specific hierarchy.
 
         Args:
-            args: the script options.
+            options: the script arguments.
     """
 
     # Remove trailing slash if exists
@@ -245,7 +245,7 @@ def parse_options(args=sys.argv[1:]):
     """ Parse the script options.
 
         Args:
-            args: the script options.
+            args: the script arguments.
     """
 
     # Create the top-level parser
@@ -269,7 +269,7 @@ def parse_options(args=sys.argv[1:]):
 
     # Create a subparser for the sub-commands
     subparsers = parser.add_subparsers(
-        help="-f/--help to see the available options",
+        help="-h/--help to see the available options",
         dest="subcommand",
         title="available subcommands",
     )
