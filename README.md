@@ -29,7 +29,7 @@ cat <<EOF > ssm-param-policy.json
             "Effect": "Allow",
             "Action": [
                 "ssm:PutParameter",
-                "ssm:GetParameter"
+                "ssm:GetParameter",
                 "ssm:GetParametersByPath",
                 "ssm:DeleteParameters",
                 "kms:Decrypt"
